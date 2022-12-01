@@ -16,6 +16,26 @@ export function work(input: string): number {
   return Math.max(...elves.map((value) => value));
 }
 
+export function workRedo(input: string): number {
+  const calories = input.split('\n');
+
+  const elves: Array<number> = [];
+  let count = 0;
+  calories.forEach((value, _index) => {
+    if (value === '') {
+      elves.push(count);
+      count = 0;
+    } else {
+      count += Number(value);
+    }
+  });
+  elves.push(count);
+
+  elves.sort((a, b) => b - a);
+
+  return elves[0];
+}
+
 export function work2(input: string): number {
   const calories = input.split('\n');
 
@@ -48,4 +68,24 @@ export function work2(input: string): number {
   }
 
   return sum;
+}
+
+export function work2Redo(input: string): number {
+  const calories = input.split('\n');
+
+  const elves: number[] = [];
+  let count = 0;
+  calories.forEach((value, _index) => {
+    if (value === '') {
+      elves.push(count);
+      count = 0;
+    } else {
+      count += Number(value);
+    }
+  });
+  elves.push(count);
+
+  elves.sort((a, b) => b - a);
+
+  return elves.slice(0, 3).reduce((a, b) => a + b, 0);
 }
