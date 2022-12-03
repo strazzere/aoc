@@ -21,19 +21,19 @@ describe('day 3', () => {
     });
   });
 
-  // describe('part 2', () => {
-  //   it('can parse test inputs correctly', () => {
-  //     const input = fs.readFileSync('./src/2022/3/test.txt', 'utf8');
-  //     const underTest = work2(input);
-  //     const expected = -1;
-  //     expect(underTest, 'should be identical').to.deep.equal(expected);
-  //   });
+  describe('part 2', () => {
+    it('can parse test inputs correctly', () => {
+      const input = fs.readFileSync('./src/2022/3/test.txt', 'utf8');
+      const underTest = work2(input);
+      const expected = 70;
+      expect(underTest, 'should be identical').to.deep.equal(expected);
+    });
 
-  //   it('can parse input2 correctly', () => {
-  //     const input = fs.readFileSync('./src/2022/3/input2.txt', 'utf8');
-  //     const underTest = work2(input);
-  //     const expected = -1;
-  //     expect(underTest, 'should be identical').to.deep.equal(expected);
-  //   });
-  // });
+    it('can parse input2 correctly', () => {
+      const input = fs.readFileSync('./src/2022/3/input2.txt', 'utf8');
+      const underTest = work2(input);
+      const expected = 2518;
+      expect(underTest, 'should be identical').to.deep.equal(expected);
+    });
+  });
 });
