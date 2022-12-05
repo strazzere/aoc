@@ -46,8 +46,6 @@ export function work2(input: string): number {
         Number(sections[outside].split('-')[1]) >= Number(sections[inside].split('-')[1])
       ) {
         sum++;
-      } else {
-        console.log(sections);
       }
     }
   });
