@@ -4,7 +4,7 @@ import { expect } from 'chai';
 
 import * as fs from 'fs';
 
-describe('day 4', () => {
+describe('day 5', () => {
   describe('part 1', () => {
     it('can parse test inputs correctly', () => {
       const input = fs.readFileSync('./src/2022/5/test.txt', 'utf8');
