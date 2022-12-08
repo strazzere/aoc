@@ -213,11 +213,6 @@ export function work2(input: string): number {
   dirs.forEach((dir) => {
     const directorySize = getTotalSize(dir);
     if (directorySize >= neededForUpdate && directorySize < getTotalSize(largestRemovable)) {
-      console.log(
-        `${directorySize} >= ${neededForUpdate} && ${directorySize} < ${getTotalSize(
-          largestRemovable,
-        )}`,
-      );
       largestRemovable = dir;
     }
   });
