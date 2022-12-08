@@ -47,6 +47,7 @@ export function work(input: string): number {
   let visible = 0;
   forest.map((row, x) => {
     row.map((_column, y) => {
+      // @ts-ignore
       if (isEdge(forest, x) || isEdge(row, y)) {
         visible++;
       } else {
@@ -132,6 +133,7 @@ export function work2(input: string): number {
   forest.map((row, y) => {
     row.map((_column, x) => {
       // ignore edges
+      // @ts-ignore
       if (!isEdge(forest, x) && !isEdge(row, y)) {
         const viewability = viewableTrees(forest, x, y);
         if (bestVisibility < viewability) {
