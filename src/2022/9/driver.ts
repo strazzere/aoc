@@ -22,41 +22,28 @@ export function work(input: string): number {
     const amount = Number(parsed[1]);
 
     const currentHead = head.at(-1).split(',');
-    switch (dir) {
-      case 'R':
-        for (let i = 0; i < amount; i++) {
-          head.push(`${Number(currentHead[0]) + (i + 1)},${currentHead[1]}`);
-          if (!isNeighbor(tail.at(-1), head.at(-1))) {
-            tail.push(head.at(-2));
-          }
-        }
-        break;
-      case 'L':
-        for (let i = 0; i < amount; i++) {
-          head.push(`${Number(currentHead[0]) - (i + 1)},${currentHead[1]}`);
-          if (!isNeighbor(tail.at(-1), head.at(-1))) {
-            tail.push(head.at(-2));
-          }
-        }
-        break;
-      case 'U':
-        for (let i = 0; i < amount; i++) {
-          head.push(`${currentHead[0]},${Number(currentHead[1]) + (i + 1)}`);
-          if (!isNeighbor(tail.at(-1), head.at(-1))) {
-            tail.push(head.at(-2));
-          }
-        }
-        break;
-      case 'D':
-        for (let i = 0; i < amount; i++) {
-          head.push(`${currentHead[0]},${Number(currentHead[1]) - (i + 1)}`);
-          if (!isNeighbor(tail.at(-1), head.at(-1))) {
-            tail.push(head.at(-2));
-          }
-        }
-        break;
-      default:
-        throw new Error(`Unknown direction`);
+    let nextMove = undefined;
+    for (let i = 0; i < amount; i++) {
+      switch (dir) {
+        case 'R':
+          nextMove = `${Number(currentHead[0]) + (i + 1)},${currentHead[1]}`;
+          break;
+        case 'L':
+          nextMove = `${Number(currentHead[0]) - (i + 1)},${currentHead[1]}`;
+          break;
+        case 'U':
+          nextMove = `${currentHead[0]},${Number(currentHead[1]) + (i + 1)}`;
+          break;
+        case 'D':
+          nextMove = `${currentHead[0]},${Number(currentHead[1]) - (i + 1)}`;
+          break;
+        default:
+          throw new Error(`Unknown direction`);
+      }
+      head.push(nextMove);
+      if (!isNeighbor(tail.at(-1), head.at(-1))) {
+        tail.push(head.at(-2));
+      }
     }
   });
 
