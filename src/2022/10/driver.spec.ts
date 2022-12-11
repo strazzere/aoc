@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import { work, work2 } from './driver';
 import { expect } from 'chai';
 
