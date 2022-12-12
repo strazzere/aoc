@@ -31,7 +31,7 @@ describe('day 13', () => {
     it('can parse input2 correctly', () => {
       const input = fs.readFileSync('./src/2022/12/input2.txt', 'utf8');
       const underTest = work2(input);
-      const expected = 14952185856;
+      const expected = 354;
       expect(underTest, 'should be identical').to.deep.equal(expected);
     });
   });
