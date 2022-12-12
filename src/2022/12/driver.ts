@@ -2,7 +2,6 @@ import {
   add,
   equals,
   groupBy,
-  indexOf,
   isEmpty,
   lensPath,
   map,
@@ -11,7 +10,6 @@ import {
   pipe,
   reduce,
   values,
-  valuesIn,
 } from 'ramda';
 
 const getHeightValue = (letter: string): number => {
@@ -88,11 +86,11 @@ const bfs = (
 export function work(input: string): number {
   const map = input.split('\n');
 
-  const grid: String[][] = [];
+  const grid: string[][] = [];
   const gridVal: number[][] = [];
   map.map((row) => {
-    let gridValRow: number[] = [];
-    let gridRow: string[] = [];
+    const gridValRow: number[] = [];
+    const gridRow: string[] = [];
     row.split('').map((location) => {
       gridRow.push(location);
       gridValRow.push(getHeightValue(location));
@@ -110,11 +108,11 @@ export function work(input: string): number {
 export function work2(input: string): number {
   const map = input.split('\n');
 
-  const grid: String[][] = [];
+  const grid: string[][] = [];
   const gridVal: number[][] = [];
   map.map((row) => {
-    let gridValRow: number[] = [];
-    let gridRow: string[] = [];
+    const gridValRow: number[] = [];
+    const gridRow: string[] = [];
     row.split('').map((location) => {
       gridRow.push(location);
       gridValRow.push(getHeightValue(location));
