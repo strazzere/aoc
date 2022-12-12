@@ -219,6 +219,5 @@ export function work2(input: string): number {
 
   const topMonkeys = monkeys.sort((x, y) => y.inspected - x.inspected).slice(0, 2);
 
-  console.log(topMonkeys);
   return topMonkeys[0].inspected * topMonkeys[1].inspected;
 }
