@@ -45,6 +45,7 @@
   "dependencies": {
     "@types/ramda": "^0.28.20",
     "nyc": "^15.1.0",
-    "ramda": "^0.28.0"
+    "ramda": "^0.28.0",
+    "ramda-adjunct": "^3.4.0"
   }
 }
